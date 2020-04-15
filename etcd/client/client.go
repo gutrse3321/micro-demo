@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"flag"
+	"github.com/gutrse3321/aki-persit/remote"
 	"github.com/smallnest/rpcx/client"
 	"log"
 	"time"
@@ -25,19 +26,23 @@ type Args struct {
 	B int
 }
 
-type Reply struct {
-	C int
-}
-
 func main() {
 	flag.Parse()
 
-	d := client.NewEtcdV3Discovery(*basePath, "Arith", []string{*etcdAddr}, nil)
+	go createRemoteClient("air1", "%d * %d = %d")
+	go createRemoteClient("air2", "%d + %d = %d")
+
+	select {}
+}
+
+func createRemoteClient(serviceName string, logContent string) {
+	d := client.NewEtcdV3Discovery(*basePath, serviceName, []string{*etcdAddr}, nil)
 	opt := client.DefaultOption
 	opt.Heartbeat = true
 	opt.HeartbeatInterval = time.Second * 10
 
-	xclient := client.NewXClient("Arith", client.Failbackup, client.WeightedRoundRobin, d, opt)
+	xclient := client.NewXClient(serviceName, client.Failbackup, client.WeightedRoundRobin, d, opt)
+
 	defer xclient.Close()
 
 	args := &Args{
@@ -46,7 +51,7 @@ func main() {
 	}
 
 	for {
-		reply := &Reply{}
+		reply := &remote.Remote{}
 		err := xclient.Call(context.Background(), "Mul", args, reply)
 		if err != nil {
 			log.Printf("failed to call: %v\n", err)
@@ -54,7 +59,12 @@ func main() {
 			continue
 		}
 
-		log.Printf("%d * %d = %d", args.A, args.B, reply.C)
+		res, err := remote.ResolveRemote(*reply)
+		if err != nil {
+			log.Fatal("remote", err)
+		}
+
+		log.Printf(logContent, args.A, args.B, res.(int64))
 
 		time.Sleep(5 * time.Second)
 	}

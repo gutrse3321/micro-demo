@@ -19,7 +19,7 @@ import (
  * @Desc:
  */
 var (
-	addr = flag.String("addr", "localhost:8972", "server address")
+	addr = flag.String("addr", "localhost:9972", "server address")
 	etcdAddr = flag.String("etcdAddr", "175.24.110.208:2380", "etcd address")
 	basePath = flag.String("base", "/rpcx_test", "prefix path")
 )
@@ -33,7 +33,7 @@ type Arith struct {
 }
 
 func (a *Arith) Mul(ctx context.Context, args *Args, codeRemote *remote.Remote) error {
-	remote.Init(codeRemote, args.A * args.B)
+	remote.Init(codeRemote, args.A + args.B)
 	return nil
 }
 
@@ -43,7 +43,7 @@ func main() {
 	s := server.NewServer()
 	addRegistryPlugin(s)
 
-	s.RegisterName("air1", new(Arith), "")
+	s.RegisterName("air2", new(Arith), "")
 
 	s.Serve("tcp", *addr)
 }

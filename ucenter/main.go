@@ -1,9 +1,9 @@
 package main
 
 import (
-	"context"
+	"demo/ucenter/provider"
 	"flag"
-	"github.com/gutrse3321/aki-persit/remote"
+	"github.com/gin-gonic/gin"
 	"github.com/rcrowley/go-metrics"
 	"github.com/smallnest/rpcx/server"
 	"github.com/smallnest/rpcx/serverplugin"
@@ -13,44 +13,41 @@ import (
 
 /**
  * @Author: Tomonori
- * @Date: 2020/4/14 12:03
+ * @Date: 2020/4/15 17:43
  * @Title:
  * --- --- ---
  * @Desc:
  */
 var (
-	addr = flag.String("addr", "localhost:8972", "server address")
+	addr = flag.String("addr", "localhost:3001", "server address")
 	etcdAddr = flag.String("etcdAddr", "175.24.110.208:2380", "etcd address")
 	basePath = flag.String("base", "/rpcx_test", "prefix path")
 )
 
-type Args struct {
-	A int
-	B int
-}
-
-type Arith struct {
-}
-
-func (a *Arith) Mul(ctx context.Context, args *Args, codeRemote *remote.Remote) error {
-	remote.Init(codeRemote, args.A * args.B)
-	return nil
-}
-
 func main() {
-	flag.Parse()
-
-	s := server.NewServer()
-	addRegistryPlugin(s)
-
-	s.RegisterName("air1", new(Arith), "")
-
-	s.Serve("tcp", *addr)
+	go createApiServer()
+	go createRpcServer()
+	select {}
+	//v1 := r.Group("/")
+	//{
+	//	//v1.POST("/getUserInfo")
+	//}
 }
 
-/**
-	etcd 插件配置
- */
+func createApiServer() {
+	r := gin.New()
+	r.Use(gin.Logger())
+	r.Run(":3000")
+}
+
+func createRpcServer() {
+	flag.Parse()
+	rpcServer := server.NewServer()
+	addRegistryPlugin(rpcServer)
+	rpcServer.RegisterName("ucenter-remote", &provider.Provider{}, "")
+	rpcServer.Serve("tcp", *addr)
+}
+
 func addRegistryPlugin(s *server.Server) {
 	r := &serverplugin.EtcdV3RegisterPlugin{
 		ServiceAddress: "tcp@" + *addr,
