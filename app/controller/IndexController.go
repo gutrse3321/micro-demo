@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"demo/relatives/ucenterRemote"
-	"demo/ucenter/provider/param"
+	"demo/app/service"
 	"github.com/gin-gonic/gin"
+	"github.com/google/wire"
 	"net/http"
 )
 
@@ -14,10 +14,20 @@ import (
  * --- --- ---
  * @Desc:
  */
+type Controller interface {
+}
+
 type Index struct {
+	userService service.IUserService
+}
+
+func NewIndexController(service service.IUserService) *Index {
+	return &Index{userService: service}
 }
 
 func (i *Index) GetUserBaseInfo(ctx *gin.Context) {
-	userInfo := ucenterRemote.GetUserBaseInfoRemote(param.GetUserBaseInfoArgs{})
+	userInfo := i.userService.GetUserInfo()
 	ctx.JSON(http.StatusOK, &userInfo)
 }
+
+var ProviderSet = wire.NewSet(NewIndexController)

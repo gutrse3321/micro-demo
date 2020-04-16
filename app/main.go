@@ -27,7 +27,7 @@ func main() {
 func createApiServer() {
 	r := gin.New()
 	r.Use(gin.Logger())
-	var index *controller.Index
+	index := controller.CreateIndexController
 
 	v1 := r.Group("/")
 	{
