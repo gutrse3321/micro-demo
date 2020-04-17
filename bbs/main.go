@@ -1,7 +1,8 @@
-package ucenter
+package bbs
 
 import (
 	"demo/pkg/app"
+	"demo/pkg/transports/http"
 	"demo/pkg/transports/rpc"
 	"github.com/google/wire"
 	"github.com/pkg/errors"
@@ -11,11 +12,12 @@ import (
 
 /**
  * @Author: Tomonori
- * @Date: 2020/4/15 17:43
+ * @Date: 2020/4/15 18:20
  * @Title:
  * --- --- ---
  * @Desc:
  */
+
 type Options struct {
 	Name string
 }
@@ -32,8 +34,8 @@ func NewOptions(v *viper.Viper, logger *zap.Logger) (*Options, error) {
 	return opt, err
 }
 
-func NewApp(opt *Options, logger *zap.Logger, rpcServer *rpc.Server) (*app.Application, error) {
-	application, err := app.New(opt.Name, logger, app.RpcServerOption(rpcServer))
+func NewApp(opt *Options, logger *zap.Logger, httpServer *http.Server, rpcServer *rpc.Server) (*app.Application, error) {
+	application, err := app.New(opt.Name, logger, app.RpcServerOption(rpcServer), app.HttpServerOption(httpServer))
 	if err != nil {
 		return nil, errors.Wrap(err, "new application error")
 	}
@@ -42,3 +44,22 @@ func NewApp(opt *Options, logger *zap.Logger, rpcServer *rpc.Server) (*app.Appli
 }
 
 var ProviderSet = wire.NewSet(NewApp, NewOptions)
+
+//func main() {
+//	createApiServer()
+//	//go createRpcServer()
+//	//select {}
+//}
+//
+//func createApiServer() {
+//	r := gin.New()
+//	r.Use(gin.Logger())
+//	//index := controller.
+//
+//	//v1 := r.Group("/")
+//	//{
+//	//	v1.POST("/getUserInfo", index.GetUserBaseInfo)
+//	//}
+//
+//	r.Run(":4000")
+//}
