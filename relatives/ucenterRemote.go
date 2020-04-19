@@ -18,11 +18,11 @@ import (
  */
 
 type UCenterRemote struct {
-	client  rpc.Client
+	client  *rpc.Client
 	xClient client.XClient
 }
 
-func NewUCenterRemote(client rpc.Client) (*UCenterRemote, error) {
+func NewUCenterRemote(client *rpc.Client) (*UCenterRemote, error) {
 	xClient, err := client.Connect("ucenter-provider")
 	if err != nil {
 		return nil, errors.Wrap(err, "connected ucenter-provider error")
@@ -31,8 +31,6 @@ func NewUCenterRemote(client rpc.Client) (*UCenterRemote, error) {
 }
 
 func (u *UCenterRemote) GetUserBaseInfo(args param.GetUserBaseInfoArgs) (*remote.Remote, error) {
-	defer u.xClient.Close()
-
 	codeRemote := &remote.Remote{}
 	err := u.xClient.Call(context.Background(), "GetUserBaseInfo", args, codeRemote)
 	if err != nil {

@@ -3,7 +3,6 @@ package bbs
 import (
 	"demo/pkg/app"
 	"demo/pkg/transports/http"
-	"demo/pkg/transports/rpc"
 	"github.com/google/wire"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
@@ -34,8 +33,8 @@ func NewOptions(v *viper.Viper, logger *zap.Logger) (*Options, error) {
 	return opt, err
 }
 
-func NewApp(opt *Options, logger *zap.Logger, httpServer *http.Server, rpcServer *rpc.Server) (*app.Application, error) {
-	application, err := app.New(opt.Name, logger, app.RpcServerOption(rpcServer), app.HttpServerOption(httpServer))
+func NewApp(opt *Options, logger *zap.Logger, httpServer *http.Server) (*app.Application, error) {
+	application, err := app.New(opt.Name, logger, app.HttpServerOption(httpServer))
 	if err != nil {
 		return nil, errors.Wrap(err, "new application error")
 	}

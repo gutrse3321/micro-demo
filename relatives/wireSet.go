@@ -1,6 +1,8 @@
 package relatives
 
-import "github.com/google/wire"
+import (
+	"github.com/google/wire"
+)
 
 /**
  * @Author: Tomonori

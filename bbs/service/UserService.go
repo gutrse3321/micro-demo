@@ -18,10 +18,10 @@ type IUserService interface {
 }
 
 type UserServiceImpl struct {
-	userRemote relatives.UCenterRemote
+	userRemote *relatives.UCenterRemote
 }
 
-func NewUserService(userRemote relatives.UCenterRemote) IUserService {
+func NewUserService(userRemote *relatives.UCenterRemote) IUserService {
 	return &UserServiceImpl{userRemote}
 }
 

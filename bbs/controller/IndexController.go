@@ -4,7 +4,6 @@ import (
 	"demo/bbs/service"
 	httpServer "demo/pkg/transports/http"
 	"github.com/gin-gonic/gin"
-	"go.uber.org/zap"
 	"net/http"
 )
 

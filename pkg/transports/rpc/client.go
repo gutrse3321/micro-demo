@@ -18,8 +18,8 @@ type ClientOptions struct {
 	EtcdAddress []string
 }
 
-func NewClientOptions(v *viper.Viper) (*ServerOptions, error) {
-	opt := &ServerOptions{}
+func NewClientOptions(v *viper.Viper) (*ClientOptions, error) {
+	opt := &ClientOptions{}
 
 	if err := v.UnmarshalKey("rpc", opt); err != nil {
 		return nil, err
