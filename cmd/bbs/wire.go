@@ -5,6 +5,7 @@ package main
 import (
 	"demo/bbs"
 	"demo/bbs/controller"
+	"demo/bbs/provider"
 	"demo/bbs/service"
 	"demo/pkg/app"
 	"demo/pkg/config"
@@ -26,7 +27,9 @@ var providerSet = wire.NewSet(
 	log.ProviderSet,
 	config.ProviderSet,
 	http.ProviderSet,
+	rpc.ServerProviderSet,
 	rpc.ClientProviderSet,
+	provider.ProviderSet,
 	relatives.ProviderSet,
 	bbs.ProviderSet,
 	service.ProviderSet,

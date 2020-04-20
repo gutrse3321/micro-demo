@@ -2,13 +2,13 @@ package http
 
 import (
 	"context"
-	"fmt"
 	ginzap "github.com/gin-contrib/zap"
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
+	"net"
 	"net/http"
 	"time"
 )
@@ -25,15 +25,13 @@ import (
 从配置文件中获取 key: http
 */
 type Options struct {
-	Ip   string
-	Port int
 	Mode string
 }
 
 func NewOptions(v *viper.Viper) (*Options, error) {
 	opt := &Options{}
 
-	if err := v.UnmarshalKey("http", opt); err != nil {
+	if err := v.UnmarshalKey("app", opt); err != nil {
 		return nil, err
 	}
 
@@ -99,30 +97,17 @@ func (s *Server) ApplicationName(name string) {
 /**
 启动http服务器
 */
-func (s *Server) Start() error {
-	s.port = s.opt.Port
-	if s.port == 0 {
-		return errors.New("missing port: 0")
-	}
-
-	s.host = s.opt.Ip
-	if s.host == "" {
-		return errors.New("missing server ip: \"\"")
-	}
-
-	addr := fmt.Sprintf("%s:%d", s.host, s.port)
-
+func (s *Server) Start(ln net.Listener) error {
 	//配置标准包http server配置, 指定处理器为gin
 	s.httpServer = http.Server{
-		Addr:    addr,
 		Handler: s.router,
 	}
 
-	s.logger.Info("http server starting ...", zap.String("addr", addr))
+	s.logger.Info("http server starting ...")
 
 	//启动服务器，监听端口，以及异常处理
 	go func() {
-		if err := s.httpServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+		if err := s.httpServer.Serve(ln); err != nil && err != http.ErrServerClosed {
 			s.logger.Fatal("start http server err", zap.Error(err))
 			return
 		}

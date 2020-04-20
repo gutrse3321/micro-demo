@@ -3,6 +3,7 @@ package bbs
 import (
 	"demo/pkg/app"
 	"demo/pkg/transports/http"
+	"demo/pkg/transports/rpc"
 	"github.com/google/wire"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
@@ -17,14 +18,10 @@ import (
  * @Desc:
  */
 
-type Options struct {
-	Name string
-}
-
-func NewOptions(v *viper.Viper, logger *zap.Logger) (*Options, error) {
+func NewOptions(v *viper.Viper, logger *zap.Logger) (*app.Options, error) {
 	var err error
 
-	opt := &Options{}
+	opt := &app.Options{}
 	if err = v.UnmarshalKey("app", opt); err != nil {
 		return nil, errors.Wrap(err, "unmarshal app config error")
 	}
@@ -33,8 +30,8 @@ func NewOptions(v *viper.Viper, logger *zap.Logger) (*Options, error) {
 	return opt, err
 }
 
-func NewApp(opt *Options, logger *zap.Logger, httpServer *http.Server) (*app.Application, error) {
-	application, err := app.New(opt.Name, logger, app.HttpServerOption(httpServer))
+func NewApp(opt *app.Options, logger *zap.Logger, rpcServer *rpc.Server, httpServer *http.Server) (*app.Application, error) {
+	application, err := app.New(opt, logger, app.RpcServerOption(rpcServer), app.HttpServerOption(httpServer))
 	if err != nil {
 		return nil, errors.Wrap(err, "new application error")
 	}

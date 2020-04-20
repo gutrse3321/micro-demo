@@ -1,16 +1,12 @@
 app:
   name: bbs
-
-http:
   ip: 127.0.0.1
   port: 4000
-  mode: debug
+  mode: debug # release
 
 rpc:
-#  ip: 127.0.0.1
-#  port: 3000
   basePath: /rpcx_test
-#  updateInterval: 600000
+  updateInterval: 600000
   etcdAddress:
     - 175.24.110.208:2379
 

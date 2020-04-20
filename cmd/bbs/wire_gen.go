@@ -8,6 +8,7 @@ package main
 import (
 	"demo/bbs"
 	"demo/bbs/controller"
+	"demo/bbs/provider"
 	"demo/bbs/service"
 	"demo/pkg/app"
 	"demo/pkg/config"
@@ -33,7 +34,16 @@ func CreateApp(configPath string) (*app.Application, error) {
 	if err != nil {
 		return nil, err
 	}
-	bbsOptions, err := bbs.NewOptions(viper, logger)
+	appOptions, err := bbs.NewOptions(viper, logger)
+	if err != nil {
+		return nil, err
+	}
+	serverOptions, err := rpc.NewServerOptions(viper)
+	if err != nil {
+		return nil, err
+	}
+	initServers := provider.CreateInitRpcServersFn()
+	server, err := rpc.NewServer(serverOptions, logger, initServers)
 	if err != nil {
 		return nil, err
 	}
@@ -57,11 +67,11 @@ func CreateApp(configPath string) (*app.Application, error) {
 	indexController := controller.NewIndexController(iUserService)
 	initControllers := controller.CreateInitControllersFn(indexController)
 	engine := http.NewRouter(httpOptions, logger, initControllers)
-	server, err := http.New(httpOptions, logger, engine)
+	httpServer, err := http.New(httpOptions, logger, engine)
 	if err != nil {
 		return nil, err
 	}
-	application, err := bbs.NewApp(bbsOptions, logger, server)
+	application, err := bbs.NewApp(appOptions, logger, server, httpServer)
 	if err != nil {
 		return nil, err
 	}
@@ -77,4 +87,4 @@ func CreateApp(configPath string) (*app.Application, error) {
  * --- --- ---
  * @Desc:
  */
-var providerSet = wire.NewSet(log.ProviderSet, config.ProviderSet, http.ProviderSet, rpc.ClientProviderSet, relatives.ProviderSet, bbs.ProviderSet, service.ProviderSet, controller.ProviderSet)
+var providerSet = wire.NewSet(log.ProviderSet, config.ProviderSet, http.ProviderSet, rpc.ServerProviderSet, rpc.ClientProviderSet, provider.ProviderSet, relatives.ProviderSet, bbs.ProviderSet, service.ProviderSet, controller.ProviderSet)

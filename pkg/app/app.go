@@ -3,9 +3,11 @@ package app
 import (
 	"demo/pkg/transports/http"
 	"demo/pkg/transports/rpc"
+	"fmt"
 	"github.com/google/wire"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
+	"net"
 	"os"
 	"os/signal"
 	"syscall"
@@ -18,9 +20,20 @@ import (
  * --- --- ---
  * @Desc:
  */
+/**
+从起App传递值获取
+*/
+type Options struct {
+	Name string
+	Ip   string
+	Port int
+	Mode string
+}
+
 type Application struct {
 	name       string
 	logger     *zap.Logger
+	opt        *Options
 	httpServer *http.Server
 	rpcServer  *rpc.Server
 }
@@ -31,10 +44,11 @@ type Option func(app *Application) error
 实例化服务的各自的http、rpc服务器
 Option函数参数即是下面的两个HttpServerOption，RpcServerOption
 */
-func New(name string, logger *zap.Logger, options ...Option) (*Application, error) {
+func New(opt *Options, logger *zap.Logger, options ...Option) (*Application, error) {
 	app := &Application{
-		name:   name,
+		name:   opt.Name,
 		logger: logger.With(zap.String("type", "Application")),
+		opt:    opt,
 	}
 
 	for _, option := range options {
@@ -50,14 +64,29 @@ func New(name string, logger *zap.Logger, options ...Option) (*Application, erro
 启动微服务的自己http和rpc服务器
 */
 func (a *Application) Start() error {
+	if a.opt.Port == 0 {
+		return errors.New("missing port: 0")
+	}
+
+	if a.opt.Ip == "" {
+		return errors.New("missing server ip: \"\"")
+	}
+
+	addr := fmt.Sprintf("%s:%d", a.opt.Ip, a.opt.Port)
+
+	ln, err := net.Listen("tcp", addr)
+	if err != nil {
+		return errors.Wrap(err, "create tcp serve")
+	}
+
 	if a.httpServer != nil {
-		if err := a.httpServer.Start(); err != nil {
+		if err := a.httpServer.Start(ln); err != nil {
 			return errors.Wrap(err, "http server start error")
 		}
 	}
 
 	if a.rpcServer != nil {
-		if err := a.rpcServer.Start(); err != nil {
+		if err := a.rpcServer.Start(ln); err != nil {
 			return errors.Wrap(err, "rpc server start error")
 		}
 	}

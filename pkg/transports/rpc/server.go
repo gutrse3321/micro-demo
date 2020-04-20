@@ -8,6 +8,7 @@ import (
 	"github.com/smallnest/rpcx/serverplugin"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
+	"net"
 	"time"
 )
 
@@ -22,8 +23,6 @@ import (
 从配置文件中获取 key: rpc
 */
 type ServerOptions struct {
-	Ip             string
-	Port           int
 	BasePath       string
 	UpdateInterval time.Duration
 	EtcdAddress    []string
@@ -73,20 +72,8 @@ func (s *Server) ApplicationName(name string) {
 	s.app = name
 }
 
-func (s *Server) Start() error {
-	s.port = s.opt.Port
-	if s.port == 0 {
-		return errors.New("missing port: 0")
-	}
-
-	s.host = s.opt.Ip
-	if s.host == "" {
-		return errors.New("missing server ip: \"\"")
-	}
-
-	addr := fmt.Sprintf("%s:%d", s.host, s.port)
-
-	s.logger.Info("rpc server starting ...", zap.String("addr", addr))
+func (s *Server) Start(ln net.Listener) error {
+	s.logger.Info("rpc server starting ...")
 
 	if err := s.register(); err != nil {
 		return errors.Wrap(err, "register rpc server error")
@@ -96,7 +83,7 @@ func (s *Server) Start() error {
 	s.initFunc(s.server)
 
 	go func() {
-		if err := s.server.Serve("tcp", addr); err != nil {
+		if err := s.server.ServeListener("tcp", ln); err != nil {
 			s.logger.Fatal("failed to serve rpc: %v", zap.Error(err))
 		}
 	}()

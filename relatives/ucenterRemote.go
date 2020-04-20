@@ -23,8 +23,7 @@ type UCenterRemote struct {
 }
 
 func NewUCenterRemote(client *rpc.Client) (*UCenterRemote, error) {
-	service := "UCenterProvider"
-	xClient, err := client.Connect(&service)
+	xClient, err := client.Connect("UCenterProvider")
 	if err != nil {
 		return nil, errors.Wrap(err, "connected ucenter-provider error")
 	}

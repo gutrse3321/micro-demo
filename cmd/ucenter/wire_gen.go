@@ -30,7 +30,7 @@ func CreateApp(configPath string) (*app.Application, error) {
 	if err != nil {
 		return nil, err
 	}
-	ucenterOptions, err := ucenter.NewOptions(viper, logger)
+	appOptions, err := ucenter.NewOptions(viper, logger)
 	if err != nil {
 		return nil, err
 	}
@@ -43,7 +43,7 @@ func CreateApp(configPath string) (*app.Application, error) {
 	if err != nil {
 		return nil, err
 	}
-	application, err := ucenter.NewApp(ucenterOptions, logger, server)
+	application, err := ucenter.NewApp(appOptions, logger, server)
 	if err != nil {
 		return nil, err
 	}
