@@ -35,9 +35,9 @@ func NewClient(opt *ClientOptions) (*Client, error) {
 	return &Client{opt: opt}, nil
 }
 
-func (c *Client) Connect(service string) (client.XClient, error) {
-	d := client.NewEtcdV3Discovery(c.opt.BasePath, service, c.opt.EtcdAddress, nil)
-	xClient := client.NewXClient(service, client.Failbackup, client.WeightedRoundRobin, d, client.DefaultOption)
+func (c *Client) Connect(service *string) (client.XClient, error) {
+	d := client.NewEtcdV3Discovery(c.opt.BasePath, *service, c.opt.EtcdAddress, nil)
+	xClient := client.NewXClient(*service, client.Failbackup, client.WeightedRoundRobin, d, client.DefaultOption)
 	return xClient, nil
 }
 

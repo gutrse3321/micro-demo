@@ -29,6 +29,10 @@ func CreateInitControllersFn(index *IndexController) httpServer.InitControllers 
 }
 
 func (i *IndexController) GetUserBaseInfo(ctx *gin.Context) {
-	userInfo, _ := i.userService.GetUserInfo()
-	ctx.JSON(http.StatusOK, &userInfo)
+	userInfo, err := i.userService.GetUserInfo()
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, err)
+	} else {
+		ctx.JSON(http.StatusOK, &userInfo)
+	}
 }

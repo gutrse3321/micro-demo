@@ -26,7 +26,7 @@ func NewUserService(userRemote *relatives.UCenterRemote) IUserService {
 }
 
 func (u *UserServiceImpl) GetUserInfo() (interface{}, error) {
-	codeRemote, err := u.userRemote.GetUserBaseInfo(param.GetUserBaseInfoArgs{})
+	codeRemote, err := u.userRemote.GetUserBaseInfo(&param.GetUserBaseInfoArgs{})
 	if err != nil {
 		return nil, err
 	}

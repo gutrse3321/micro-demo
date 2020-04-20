@@ -23,14 +23,15 @@ type UCenterRemote struct {
 }
 
 func NewUCenterRemote(client *rpc.Client) (*UCenterRemote, error) {
-	xClient, err := client.Connect("ucenter-provider")
+	service := "UCenterProvider"
+	xClient, err := client.Connect(&service)
 	if err != nil {
 		return nil, errors.Wrap(err, "connected ucenter-provider error")
 	}
 	return &UCenterRemote{client, xClient}, nil
 }
 
-func (u *UCenterRemote) GetUserBaseInfo(args param.GetUserBaseInfoArgs) (*remote.Remote, error) {
+func (u *UCenterRemote) GetUserBaseInfo(args *param.GetUserBaseInfoArgs) (*remote.Remote, error) {
 	codeRemote := &remote.Remote{}
 	err := u.xClient.Call(context.Background(), "GetUserBaseInfo", args, codeRemote)
 	if err != nil {

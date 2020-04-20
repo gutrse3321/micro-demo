@@ -12,7 +12,7 @@ rpc:
   basePath: /rpcx_test
 #  updateInterval: 600000
   etcdAddress:
-    - 175.24.110.208:2380
+    - 175.24.110.208:2379
 
 database:
   user: root

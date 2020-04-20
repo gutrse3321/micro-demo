@@ -45,7 +45,7 @@ type Server struct {
 	port     int
 	logger   *zap.Logger
 	server   *rpcxServer.Server
-	provider struct{}
+	initFunc InitServers
 }
 
 type InitServers func(s *rpcxServer.Server)
@@ -59,13 +59,13 @@ func NewServer(opt *ServerOptions, logger *zap.Logger, init InitServers) (*Serve
 	logger = logger.With(zap.String("type", "rpcx"))
 	{
 		s = rpcxServer.NewServer()
-		init(s)
 	}
 
 	return &Server{
-		opt:    opt,
-		logger: logger,
-		server: s,
+		opt:      opt,
+		logger:   logger,
+		server:   s,
+		initFunc: init,
 	}, nil
 }
 
@@ -92,6 +92,9 @@ func (s *Server) Start() error {
 		return errors.Wrap(err, "register rpc server error")
 	}
 
+	//初始化rpc服务器的provider
+	s.initFunc(s.server)
+
 	go func() {
 		if err := s.server.Serve("tcp", addr); err != nil {
 			s.logger.Fatal("failed to serve rpc: %v", zap.Error(err))
@@ -114,6 +117,7 @@ func (s *Server) register() error {
 	if err := r.Start(); err != nil {
 		return errors.Wrap(err, "register center error")
 	}
+	s.server.Plugins.Add(r)
 
 	s.logger.Info("register rpc service success", zap.String("id", "tcp@"+addr))
 	return nil

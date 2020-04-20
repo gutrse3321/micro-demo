@@ -18,10 +18,10 @@ import (
  * --- --- ---
  * @Desc:
  */
-type Provider struct {
+type UCenterProvider struct {
 }
 
-func (p *Provider) GetUserBaseInfo(ctx context.Context, args *param.GetUserBaseInfoArgs, codeRemote *remote.Remote) error {
+func (p *UCenterProvider) GetUserBaseInfo(ctx context.Context, args *param.GetUserBaseInfoArgs, codeRemote *remote.Remote) error {
 	userBaseInfoDto := service.GetUserBaseInfo()
 	remote.Init(codeRemote, userBaseInfoDto)
 	return nil
@@ -29,7 +29,7 @@ func (p *Provider) GetUserBaseInfo(ctx context.Context, args *param.GetUserBaseI
 
 func CreateInitRpcServersFn() rpc.InitServers {
 	return func(s *server.Server) {
-		s.RegisterName("ucenter-provider", &Provider{}, "")
+		s.Register(&UCenterProvider{}, "")
 		log.Println("ucenter-provider create success ... ")
 	}
 }
