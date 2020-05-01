@@ -1,14 +1,10 @@
 app:
   name: ucenter
-
-http:
   ip: 127.0.0.1
   port: 3000
-  mode: debug
+  mode: debug # release
 
 rpc:
-  ip: 127.0.0.1
-  port: 3000
   basePath: /rpcx_test
   updateInterval: 600000
   etcdAddress:
@@ -24,7 +20,7 @@ database:
   debug: true
 
 log:
-  filename: /logtmp/ucenter.log
+  filename: logtmp/ucenter.log
   maxSize: 500
   maxBackups: 3
   maxAge: 3
