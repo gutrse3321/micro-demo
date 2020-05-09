@@ -1,6 +1,6 @@
 package service
 
-import "github.com/gutrse3321/aki-persit/dto/user"
+import "github.com/gutrse3321/aki/persit/dto/user"
 
 /**
  * @Author: Tomonori

@@ -24,7 +24,7 @@ func New(path string) (*viper.Viper, error) {
 	v.AddConfigPath(".")
 	v.SetConfigFile(path)
 
-	if err := v.ReadInConfig(); err != nil {
+	if err = v.ReadInConfig(); err != nil {
 		fmt.Println("use config file ->", v.ConfigFileUsed())
 		return nil, err
 	}

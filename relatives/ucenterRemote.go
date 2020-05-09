@@ -4,7 +4,7 @@ import (
 	"context"
 	"demo/pkg/transports/rpc"
 	"demo/ucenter/provider/param"
-	"github.com/gutrse3321/aki-persit/remote"
+	"github.com/gutrse3321/aki/persit/remote"
 	"github.com/pkg/errors"
 	"github.com/smallnest/rpcx/client"
 )

@@ -3,7 +3,7 @@ package service
 import (
 	"demo/relatives"
 	"demo/ucenter/provider/param"
-	"github.com/gutrse3321/aki-persit/remote"
+	"github.com/gutrse3321/aki/persit/remote"
 )
 
 /**

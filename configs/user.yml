@@ -17,7 +17,7 @@ rpc:
 database:
   user: root
   password: 123456
-  host: 127.0.0.1
+  host: 127.0.0.1:3306
   db: fuck
   maxIdleConns: 10
   maxOpenConns: 100

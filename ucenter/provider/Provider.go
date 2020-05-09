@@ -6,7 +6,7 @@ import (
 	"demo/ucenter/provider/param"
 	"demo/ucenter/service"
 	"github.com/google/wire"
-	"github.com/gutrse3321/aki-persit/remote"
+	"github.com/gutrse3321/aki/persit/remote"
 	"github.com/smallnest/rpcx/server"
 	"log"
 )

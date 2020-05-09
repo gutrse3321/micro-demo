@@ -246,8 +246,13 @@ github.com/grpc-ecosystem/grpc-gateway v1.5.0/go.mod h1:RSKVYQBd5MCa4OVpNdGskqpg
 github.com/grpc-ecosystem/grpc-gateway v1.9.0/go.mod h1:vNeuVxBJEsws4ogUvrchl83t/GYV9WGTSLVdBhOQFDY=
 github.com/grpc-ecosystem/grpc-gateway v1.9.5 h1:UImYN5qQ8tuGpGE16ZmjvcTtTw24zw1QAp/SlnNrZhI=
 github.com/grpc-ecosystem/grpc-gateway v1.9.5/go.mod h1:vNeuVxBJEsws4ogUvrchl83t/GYV9WGTSLVdBhOQFDY=
-github.com/gutrse3321/aki-persit v0.0.1 h1:cd8b4cgQMpyzAnvp07h88lJs0jGIqGdwCV0EPV5ENZ4=
-github.com/gutrse3321/aki-persit v0.0.1/go.mod h1:3umIcr5PlzbzYH9i2jjFjM2R70ZY2d+1kwFod52zsGw=
+github.com/gutrse3321/aki v0.0.0-20200508035853-72c8b6d5c2ba h1:wlSAaoj3Jh+9+5RFktEHsQbgHP8+1knobb5sV8sEGl4=
+github.com/gutrse3321/aki/persit v0.0.1 h1:cd8b4cgQMpyzAnvp07h88lJs0jGIqGdwCV0EPV5ENZ4=
+github.com/gutrse3321/aki/persit v0.0.1/go.mod h1:3umIcr5PlzbzYH9i2jjFjM2R70ZY2d+1kwFod52zsGw=
+github.com/gutrse3321/aki/persit v0.0.0-20200508035853-72c8b6d5c2ba h1:qQem5D8ODmS6ORX/OJ+HTdRd76ZaLqI7w7Ymbn6NCq0=
+github.com/gutrse3321/aki/persit v0.0.0-20200508035853-72c8b6d5c2ba/go.mod h1:aAfFEIHfhv2S98z+kPhs45gK1igOJR552+4BeHXKVnQ=
+github.com/gutrse3321/aki/pkg v0.0.0-20200508035853-72c8b6d5c2ba h1:qXf1fMrOnlhmlRR8EvWj5pa5Q5iSQHnray0KNkyjnA4=
+github.com/gutrse3321/aki/pkg v0.0.0-20200508035853-72c8b6d5c2ba/go.mod h1:90qzPfjaGZulWVXr/z+OmD/Nxg/Kf59ArJXvNjceGpM=
 github.com/hashicorp/consul/api v1.1.0/go.mod h1:VmuI/Lkw1nC05EYQWNKwWGbkg+FbDBtguAZLlVdkD9Q=
 github.com/hashicorp/consul/api v1.4.0 h1:jfESivXnO5uLdH650JU/6AnjRoHrLhULq0FnC3Kp9EY=
 github.com/hashicorp/consul/api v1.4.0/go.mod h1:xc8u05kyMa3Wjr9eEAsIAo3dg8+LywT5E/Cl7cNS5nU=

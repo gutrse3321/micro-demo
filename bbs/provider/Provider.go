@@ -5,7 +5,7 @@ import (
 	"demo/bbs/provider/param"
 	"demo/pkg/transports/rpc"
 	"github.com/google/wire"
-	"github.com/gutrse3321/aki-persit/remote"
+	"github.com/gutrse3321/aki/persit/remote"
 	"github.com/smallnest/rpcx/server"
 	"log"
 )

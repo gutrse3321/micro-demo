@@ -6,7 +6,8 @@ require (
 	github.com/gin-contrib/zap v0.0.1
 	github.com/gin-gonic/gin v1.6.2
 	github.com/google/wire v0.4.0
-	github.com/gutrse3321/aki-persit v0.0.1
+	github.com/gutrse3321/aki/persit v0.0.0-20200508035853-72c8b6d5c2ba
+	github.com/gutrse3321/aki/pkg v0.0.0-20200508035853-72c8b6d5c2ba // indirect
 	github.com/jinzhu/gorm v1.9.12
 	github.com/pkg/errors v0.9.1
 	github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0
