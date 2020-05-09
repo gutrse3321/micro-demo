@@ -20,7 +20,7 @@ database:
   debug: true
 
 log:
-  filename: /logtmp/bbs.log
+  filename: logtmp/bbs.log
   maxSize: 500
   maxBackups: 3
   maxAge: 3
