@@ -1,9 +1,9 @@
 package ucenter
 
 import (
-	"demo/pkg/app"
-	"demo/pkg/transports/rpc"
 	"github.com/google/wire"
+	"github.com/gutrse3321/aki/pkg/app"
+	"github.com/gutrse3321/aki/pkg/transports/rpc"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"

@@ -1,0 +1,14 @@
+{"level":"info","ts":1589438089.222243,"msg":"load application config success"}
+{"level":"info","ts":1589438090.1120238,"msg":"http server starting ..."}
+{"level":"info","ts":1589438090.1120238,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1589438090.29293,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1589438102.299919,"msg":"receive a signal","type":"Application","signal":"interrupt"}
+{"level":"info","ts":1589438102.299919,"msg":"stopping http server: ","application":"bbs"}
+{"level":"fatal","ts":1589438102.299919,"msg":"failed to serve rpc: %v","type":"rpcx","error":"http: Server closed"}
+{"level":"info","ts":1590742737.9871452,"msg":"load application config success"}
+{"level":"info","ts":1590742738.7512355,"msg":"http server starting ..."}
+{"level":"info","ts":1590742738.7512355,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1590742738.9471145,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1590742748.5893087,"msg":"receive a signal","type":"Application","signal":"interrupt"}
+{"level":"info","ts":1590742748.5893087,"msg":"stopping http server: ","application":"bbs"}
+{"level":"fatal","ts":1590742748.5902965,"msg":"failed to serve rpc: %v","type":"rpcx","error":"http: Server closed"}

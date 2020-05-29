@@ -2,11 +2,11 @@ package provider
 
 import (
 	"context"
-	"demo/pkg/transports/rpc"
 	"demo/ucenter/provider/param"
 	"demo/ucenter/service"
 	"github.com/google/wire"
 	"github.com/gutrse3321/aki/persit/remote"
+	rpc "github.com/gutrse3321/aki/pkg/transports/rpc"
 	"github.com/smallnest/rpcx/server"
 	"log"
 )

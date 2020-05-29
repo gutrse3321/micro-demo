@@ -1,0 +1,5 @@
+{"level":"info","ts":1590742762.0159822,"msg":"load application config success"}
+{"level":"info","ts":1590742762.0219781,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1590742762.2318487,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1590742769.8348987,"msg":"receive a signal","type":"Application","signal":"interrupt"}
+{"level":"info","ts":1590742769.8348987,"msg":"rpc server stopping ... ","type":"rpcx"}

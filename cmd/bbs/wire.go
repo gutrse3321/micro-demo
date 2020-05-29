@@ -7,13 +7,13 @@ import (
 	"demo/bbs/controller"
 	"demo/bbs/provider"
 	"demo/bbs/service"
-	"demo/pkg/app"
-	"demo/pkg/config"
-	"demo/pkg/log"
-	"demo/pkg/transports/http"
-	"demo/pkg/transports/rpc"
 	"demo/relatives"
 	"github.com/google/wire"
+	"github.com/gutrse3321/aki/pkg/app"
+	"github.com/gutrse3321/aki/pkg/config"
+	"github.com/gutrse3321/aki/pkg/log"
+	"github.com/gutrse3321/aki/pkg/transports/http"
+	"github.com/gutrse3321/aki/pkg/transports/rpc"
 )
 
 /**
@@ -23,12 +23,12 @@ import (
  * --- --- ---
  * @Desc:
  */
-var providerSet = wire.NewSet(
-	log.ProviderSet,
-	config.ProviderSet,
-	http.ProviderSet,
-	rpc.ServerProviderSet,
-	rpc.ClientProviderSet,
+var wireSet = wire.NewSet(
+	log.WireSet,
+	config.WireSet,
+	http.WireSet,
+	rpc.WireServerSet,
+	rpc.WireClientSet,
 	provider.ProviderSet,
 	relatives.ProviderSet,
 	bbs.ProviderSet,
@@ -37,5 +37,5 @@ var providerSet = wire.NewSet(
 )
 
 func CreateApp(configPath string) (*app.Application, error) {
-	panic(wire.Build(providerSet))
+	panic(wire.Build(wireSet))
 }

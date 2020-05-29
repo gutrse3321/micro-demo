@@ -1,10 +1,10 @@
 package bbs
 
 import (
-	"demo/pkg/app"
-	"demo/pkg/transports/http"
-	"demo/pkg/transports/rpc"
 	"github.com/google/wire"
+	"github.com/gutrse3321/aki/pkg/app"
+	"github.com/gutrse3321/aki/pkg/transports/http"
+	"github.com/gutrse3321/aki/pkg/transports/rpc"
 	"github.com/pkg/errors"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
@@ -40,22 +40,3 @@ func NewApp(opt *app.Options, logger *zap.Logger, rpcServer *rpc.Server, httpSer
 }
 
 var ProviderSet = wire.NewSet(NewApp, NewOptions)
-
-//func main() {
-//	createApiServer()
-//	//go createRpcServer()
-//	//select {}
-//}
-//
-//func createApiServer() {
-//	r := gin.New()
-//	r.Use(gin.Logger())
-//	//index := controller.
-//
-//	//v1 := r.Group("/")
-//	//{
-//	//	v1.POST("/getUserInfo", index.GetUserBaseInfo)
-//	//}
-//
-//	r.Run(":4000")
-//}

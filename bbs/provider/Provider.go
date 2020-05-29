@@ -3,9 +3,9 @@ package provider
 import (
 	"context"
 	"demo/bbs/provider/param"
-	"demo/pkg/transports/rpc"
 	"github.com/google/wire"
 	"github.com/gutrse3321/aki/persit/remote"
+	"github.com/gutrse3321/aki/pkg/transports/rpc"
 	"github.com/smallnest/rpcx/server"
 	"log"
 )

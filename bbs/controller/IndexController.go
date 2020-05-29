@@ -2,8 +2,8 @@ package controller
 
 import (
 	"demo/bbs/service"
-	httpServer "demo/pkg/transports/http"
 	"github.com/gin-gonic/gin"
+	httpServer "github.com/gutrse3321/aki/pkg/transports/http"
 	"net/http"
 )
 

@@ -6,13 +6,13 @@
 package main
 
 import (
-	"demo/pkg/app"
-	"demo/pkg/config"
-	"demo/pkg/log"
-	"demo/pkg/transports/rpc"
 	"demo/ucenter"
 	"demo/ucenter/provider"
 	"github.com/google/wire"
+	"github.com/gutrse3321/aki/pkg/app"
+	"github.com/gutrse3321/aki/pkg/config"
+	"github.com/gutrse3321/aki/pkg/log"
+	"github.com/gutrse3321/aki/pkg/transports/rpc"
 )
 
 // Injectors from wire.go:
@@ -59,4 +59,4 @@ func CreateApp(configPath string) (*app.Application, error) {
  * --- --- ---
  * @Desc:
  */
-var providerSet = wire.NewSet(log.ProviderSet, config.ProviderSet, rpc.ServerProviderSet, ucenter.ProviderSet, provider.ProviderSet)
+var providerSet = wire.NewSet(log.WireSet, config.WireSet, rpc.WireServerSet, ucenter.ProviderSet, provider.ProviderSet)
