@@ -7,8 +7,8 @@ import (
 	"demo/bbs/controller"
 	"demo/bbs/provider"
 	"demo/bbs/service"
-	"demo/relatives"
 	"github.com/google/wire"
+	remote "github.com/gutrse3321/aki-remote"
 	"github.com/gutrse3321/aki/pkg/app"
 	"github.com/gutrse3321/aki/pkg/config"
 	"github.com/gutrse3321/aki/pkg/log"
@@ -30,7 +30,7 @@ var wireSet = wire.NewSet(
 	rpc.WireServerSet,
 	rpc.WireClientSet,
 	provider.ProviderSet,
-	relatives.ProviderSet,
+	remote.WireSet,
 	bbs.ProviderSet,
 	service.ProviderSet,
 	controller.ProviderSet,

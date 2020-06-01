@@ -10,8 +10,8 @@ import (
 	"demo/bbs/controller"
 	"demo/bbs/provider"
 	"demo/bbs/service"
-	"demo/relatives"
 	"github.com/google/wire"
+	"github.com/gutrse3321/aki-remote"
 	"github.com/gutrse3321/aki/pkg/app"
 	"github.com/gutrse3321/aki/pkg/config"
 	"github.com/gutrse3321/aki/pkg/log"
@@ -59,7 +59,7 @@ func CreateApp(configPath string) (*app.Application, error) {
 	if err != nil {
 		return nil, err
 	}
-	uCenterRemote, err := relatives.NewUCenterRemote(client)
+	uCenterRemote, err := aki_remote.NewUCenterRemote(client)
 	if err != nil {
 		return nil, err
 	}
@@ -87,4 +87,4 @@ func CreateApp(configPath string) (*app.Application, error) {
  * --- --- ---
  * @Desc:
  */
-var wireSet = wire.NewSet(log.WireSet, config.WireSet, http.WireSet, rpc.WireServerSet, rpc.WireClientSet, provider.ProviderSet, relatives.ProviderSet, bbs.ProviderSet, service.ProviderSet, controller.ProviderSet)
+var wireSet = wire.NewSet(log.WireSet, config.WireSet, http.WireSet, rpc.WireServerSet, rpc.WireClientSet, provider.ProviderSet, aki_remote.WireSet, bbs.ProviderSet, service.ProviderSet, controller.ProviderSet)

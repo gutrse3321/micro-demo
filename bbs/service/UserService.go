@@ -1,8 +1,7 @@
 package service
 
 import (
-	"demo/relatives"
-	"demo/ucenter/provider/param"
+	provider "github.com/gutrse3321/aki-remote"
 	"github.com/gutrse3321/aki/persit/remote"
 )
 
@@ -18,15 +17,16 @@ type IUserService interface {
 }
 
 type UserServiceImpl struct {
-	userRemote *relatives.UCenterRemote
+	userRemote *provider.UCenterRemote
 }
 
-func NewUserService(userRemote *relatives.UCenterRemote) IUserService {
+func NewUserService(userRemote *provider.UCenterRemote) IUserService {
 	return &UserServiceImpl{userRemote}
 }
 
 func (u *UserServiceImpl) GetUserInfo() (interface{}, error) {
-	codeRemote, err := u.userRemote.GetUserBaseInfo(&param.GetUserBaseInfoArgs{})
+	str := "ch"
+	codeRemote, err := u.userRemote.GetUserBaseInfo(&str)
 	if err != nil {
 		return nil, err
 	}
