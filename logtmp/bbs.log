@@ -12,3 +12,48 @@
 {"level":"info","ts":1590742748.5893087,"msg":"receive a signal","type":"Application","signal":"interrupt"}
 {"level":"info","ts":1590742748.5893087,"msg":"stopping http server: ","application":"bbs"}
 {"level":"fatal","ts":1590742748.5902965,"msg":"failed to serve rpc: %v","type":"rpcx","error":"http: Server closed"}
+{"level":"info","ts":1591949571.2518723,"msg":"load application config success"}
+{"level":"info","ts":1591949571.470156,"msg":"http server starting ..."}
+{"level":"info","ts":1591949571.470156,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591949571.6371799,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591949611.2116523,"msg":"/getUser","status":500,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T08:13:31Z","latency":0.0159892}
+{"level":"info","ts":1591949625.906963,"msg":"/getUser","status":500,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T08:13:45Z","latency":0.0129912}
+{"level":"info","ts":1591949633.6488652,"msg":"receive a signal","type":"Application","signal":"interrupt"}
+{"level":"info","ts":1591949633.6498642,"msg":"stopping http server: ","application":"bbs"}
+{"level":"fatal","ts":1591949633.6498642,"msg":"failed to serve rpc: %v","type":"rpcx","error":"http: Server closed"}
+{"level":"info","ts":1591949664.2964673,"msg":"load application config success"}
+{"level":"info","ts":1591949664.506341,"msg":"http server starting ..."}
+{"level":"info","ts":1591949664.506341,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591949664.6745377,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591949739.5340889,"msg":"/getUser","status":500,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T08:15:39Z","latency":71.8081386}
+{"level":"info","ts":1591949925.3006735,"msg":"/getUser","status":500,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T08:18:45Z","latency":12.5699729}
+{"level":"info","ts":1591949956.5151904,"msg":"/getUser","status":500,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T08:19:16Z","latency":26.3165074}
+{"level":"info","ts":1591950014.810028,"msg":"load application config success"}
+{"level":"info","ts":1591950015.0258944,"msg":"http server starting ..."}
+{"level":"info","ts":1591950015.0258944,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591950015.2093658,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591950041.476368,"msg":"/getUser","status":500,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T08:20:41Z","latency":23.4890975}
+{"level":"info","ts":1591950180.7047596,"msg":"/getUser","status":500,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T08:23:00Z","latency":5.0805885}
+{"level":"info","ts":1591950330.5221517,"msg":"/getUser","status":500,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T08:25:30Z","latency":61.4644652}
+{"level":"info","ts":1591950429.2990837,"msg":"load application config success"}
+{"level":"info","ts":1591950429.5209732,"msg":"http server starting ..."}
+{"level":"info","ts":1591950429.5209732,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591950429.6803854,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591950449.1209857,"msg":"/getUser","status":500,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T08:27:29Z","latency":11.0186318}
+{"level":"info","ts":1591950704.3883018,"msg":"load application config success"}
+{"level":"info","ts":1591950704.6061766,"msg":"http server starting ..."}
+{"level":"info","ts":1591950704.6061766,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591950704.7680864,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591950719.9895294,"msg":"/getUser","status":500,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T08:31:59Z","latency":12.2484695}
+{"level":"info","ts":1591953516.9740648,"msg":"load application config success"}
+{"level":"info","ts":1591953517.1889348,"msg":"http server starting ..."}
+{"level":"info","ts":1591953517.1889348,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591953517.3508341,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:4000"}
+{"level":"info","ts":1591953537.9342148,"msg":"/getUser","status":200,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T09:18:57Z","latency":7.1932171}
+{"level":"info","ts":1591953579.7390602,"msg":"load application config success"}
+{"level":"info","ts":1591953579.943936,"msg":"http server starting ..."}
+{"level":"info","ts":1591953579.943936,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591953580.113864,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:4000"}
+{"level":"info","ts":1591953587.1273866,"msg":"/getUser","status":200,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T09:19:47Z","latency":1.6720372}
+{"level":"info","ts":1591955731.0329895,"msg":"/getUser","status":200,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T09:55:31Z","latency":4.6067493}
+{"level":"info","ts":1591956604.9786408,"msg":"/getUser","status":200,"method":"POST","path":"/getUser","query":"","ip":"127.0.0.1","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36","time":"2020-06-12T10:10:04Z","latency":2.6222103}

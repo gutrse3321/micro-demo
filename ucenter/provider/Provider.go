@@ -2,7 +2,6 @@ package provider
 
 import (
 	"context"
-	"demo/ucenter/provider/param"
 	"demo/ucenter/service"
 	"github.com/google/wire"
 	"github.com/gutrse3321/aki/persit/remote"
@@ -21,8 +20,8 @@ import (
 type UCenterProvider struct {
 }
 
-func (p *UCenterProvider) GetUserBaseInfo(ctx context.Context, args *param.GetUserBaseInfoArgs, codeRemote *remote.Remote) error {
-	userBaseInfoDto := service.GetUserBaseInfo()
+func (p *UCenterProvider) GetUserBaseInfo(ctx context.Context, args *string, codeRemote *remote.Remote) error {
+	userBaseInfoDto := service.GetUserBaseInfo(args)
 	remote.Init(codeRemote, userBaseInfoDto)
 	return nil
 }

@@ -3,3 +3,65 @@
 {"level":"info","ts":1590742762.2318487,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
 {"level":"info","ts":1590742769.8348987,"msg":"receive a signal","type":"Application","signal":"interrupt"}
 {"level":"info","ts":1590742769.8348987,"msg":"rpc server stopping ... ","type":"rpcx"}
+{"level":"info","ts":1591949529.9890473,"msg":"load application config success"}
+{"level":"info","ts":1591949529.9940448,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591949530.6746256,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591949895.0229375,"msg":"receive a signal","type":"Application","signal":"interrupt"}
+{"level":"info","ts":1591949895.0229375,"msg":"rpc server stopping ... ","type":"rpcx"}
+{"level":"info","ts":1591949910.2248924,"msg":"load application config success"}
+{"level":"info","ts":1591949910.2308886,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591949910.7855618,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591949996.5146966,"msg":"load application config success"}
+{"level":"info","ts":1591949996.5236895,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591949996.7425675,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591950421.8870306,"msg":"load application config success"}
+{"level":"info","ts":1591950421.89303,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591950422.0925806,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591950690.0268795,"msg":"load application config success"}
+{"level":"info","ts":1591950690.0358727,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591950690.255738,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591950820.8331196,"msg":"load application config success"}
+{"level":"info","ts":1591950820.8391166,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591950821.037997,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591950944.1717877,"msg":"load application config success"}
+{"level":"info","ts":1591950960.2428653,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591950960.4487426,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591951005.5815635,"msg":"load application config success"}
+{"level":"info","ts":1591951033.4724398,"msg":"load application config success"}
+{"level":"info","ts":1591951110.8166997,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591951111.028569,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591951224.0537007,"msg":"load application config success"}
+{"level":"info","ts":1591951228.824857,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591951229.0297258,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591951287.2754207,"msg":"load application config success"}
+{"level":"info","ts":1591951349.9251933,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591951351.9319527,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591951392.3526256,"msg":"load application config success"}
+{"level":"info","ts":1591951395.6163456,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591951395.8327355,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591951479.5397892,"msg":"load application config success"}
+{"level":"info","ts":1591951482.7134418,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591951482.919315,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591952018.4402163,"msg":"load application config success"}
+{"level":"info","ts":1591952018.445213,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591952018.650087,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591952020.8580604,"msg":"receive a signal","type":"Application","signal":"interrupt"}
+{"level":"info","ts":1591952020.8580604,"msg":"rpc server stopping ... ","type":"rpcx"}
+{"level":"info","ts":1591952029.3590155,"msg":"load application config success"}
+{"level":"info","ts":1591952075.2446058,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591952076.1218727,"msg":"register rpc service success","type":"rpcx","id":"tcp@:0"}
+{"level":"info","ts":1591952490.9704187,"msg":"load application config success"}
+{"level":"info","ts":1591952490.976415,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591952491.190286,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}
+{"level":"info","ts":1591952537.4487917,"msg":"load application config success"}
+{"level":"info","ts":1591952537.4547873,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591952537.6656585,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}
+{"level":"info","ts":1591952579.886879,"msg":"load application config success"}
+{"level":"info","ts":1591952579.892875,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591952615.9111104,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}
+{"level":"info","ts":1591952672.0065076,"msg":"load application config success"}
+{"level":"info","ts":1591952672.0125043,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591952672.2313693,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}
+{"level":"info","ts":1591952806.7852864,"msg":"load application config success"}
+{"level":"info","ts":1591952806.7912831,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1591952807.0031548,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}

@@ -256,6 +256,8 @@ github.com/gutrse3321/aki/persit v0.0.0-20200529084448-2734c099fc91 h1:d252UNBYl
 github.com/gutrse3321/aki/persit v0.0.0-20200529084448-2734c099fc91/go.mod h1:aAfFEIHfhv2S98z+kPhs45gK1igOJR552+4BeHXKVnQ=
 github.com/gutrse3321/aki/pkg v0.0.0-20200529084448-2734c099fc91 h1:pxdpvGFI3IZlGys/VGwX4rmnXUElrELOOP0zPRJpVqU=
 github.com/gutrse3321/aki/pkg v0.0.0-20200529084448-2734c099fc91/go.mod h1:7fkwlQDX5xX7gv+M9dUZ92A6nQM7yinLAZzcbn5ZNMA=
+github.com/gutrse3321/aki/pkg v0.0.0-20200612090003-cf6d47d20c8b h1:che8BBpbLCiXsWpJAq2avuWw6l6JGUHqBvAzmxdsjz0=
+github.com/gutrse3321/aki/pkg v0.0.0-20200612090003-cf6d47d20c8b/go.mod h1:7fkwlQDX5xX7gv+M9dUZ92A6nQM7yinLAZzcbn5ZNMA=
 github.com/hashicorp/consul/api v1.1.0/go.mod h1:VmuI/Lkw1nC05EYQWNKwWGbkg+FbDBtguAZLlVdkD9Q=
 github.com/hashicorp/consul/api v1.4.0 h1:jfESivXnO5uLdH650JU/6AnjRoHrLhULq0FnC3Kp9EY=
 github.com/hashicorp/consul/api v1.4.0/go.mod h1:xc8u05kyMa3Wjr9eEAsIAo3dg8+LywT5E/Cl7cNS5nU=
