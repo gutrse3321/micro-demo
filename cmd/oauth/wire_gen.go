@@ -7,6 +7,7 @@ package main
 
 import (
 	"demo/oauth"
+	"demo/oauth/auth"
 	"demo/oauth/endpoints"
 	"github.com/google/wire"
 	"github.com/gutrse3321/aki-remote"
@@ -39,14 +40,21 @@ func CreateApp(configPath string) (*app.Application, error) {
 	if err != nil {
 		return nil, err
 	}
-	loginEndpoint := endpoints.NewLoginEndpoint()
-	initControllers := endpoints.CreateInitControllersFn(loginEndpoint)
-	engine := http.NewRouter(httpOptions, logger, initControllers)
-	server, err := http.New(httpOptions, logger, engine)
+	oAuthOptions, err := auth.NewOAuthOptions(viper, logger)
 	if err != nil {
 		return nil, err
 	}
-	application, err := oauth.NewApp(appOptions, logger, server)
+	manager := auth.NewOAuthManager(oAuthOptions)
+	server := auth.NewAuthorizationServer(manager)
+	loginEndpoint := endpoints.NewLoginEndpoint(server)
+	testEndpoint := endpoints.NewTestEndpoint(server)
+	initControllers := endpoints.CreateInitControllersFn(loginEndpoint, testEndpoint)
+	engine := http.NewRouter(httpOptions, logger, initControllers)
+	httpServer, err := http.New(httpOptions, logger, engine)
+	if err != nil {
+		return nil, err
+	}
+	application, err := oauth.NewApp(appOptions, logger, httpServer)
 	if err != nil {
 		return nil, err
 	}
@@ -62,4 +70,4 @@ func CreateApp(configPath string) (*app.Application, error) {
  * --- --- ---
  * @Desc:
  */
-var wireSet = wire.NewSet(log.WireSet, config.WireSet, http.WireSet, aki_remote.WireSet, oauth.WireSet, endpoints.WireSet)
+var wireSet = wire.NewSet(log.WireSet, config.WireSet, http.WireSet, aki_remote.WireSet, oauth.WireSet)

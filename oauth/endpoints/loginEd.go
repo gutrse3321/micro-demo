@@ -2,7 +2,8 @@ package endpoints
 
 import (
 	"github.com/gin-gonic/gin"
-	httpServer "github.com/gutrse3321/aki/pkg/transports/http"
+	"gopkg.in/oauth2.v4/server"
+	"net/http"
 )
 
 /**
@@ -14,18 +15,16 @@ import (
  */
 
 type LoginEndpoint struct {
+	oauthServer *server.Server
 }
 
-func NewLoginEndpoint() *LoginEndpoint {
-	return &LoginEndpoint{}
-}
-
-func CreateInitControllersFn(login *LoginEndpoint) httpServer.InitControllers {
-	return func(r *gin.Engine) {
-		r.POST("/oauth/login", login.Login)
-	}
+func NewLoginEndpoint(oauthServer *server.Server) *LoginEndpoint {
+	return &LoginEndpoint{oauthServer}
 }
 
 func (e *LoginEndpoint) Login(ctx *gin.Context) {
-
+	err := e.oauthServer.HandleTokenRequest(ctx.Writer, ctx.Request)
+	if err != nil {
+		http.Error(ctx.Writer, err.Error(), http.StatusInternalServerError)
+	}
 }

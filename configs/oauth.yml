@@ -1,0 +1,43 @@
+app:
+  name: oauth
+  ip: 127.0.0.1
+  port: 5000
+  mode: debug # release
+
+rpc:
+  basePath: /rpcx_test
+  updateInterval: 600000
+  etcdAddress:
+    - 175.24.110.208:2379
+
+database:
+  user: root
+  password: 123456
+  host: 127.0.0.1:3306
+  db: fuck
+  maxIdleConns: 10
+  maxOpenConns: 100
+  debug: true
+
+oauth:
+  accessTokenExp: 12 # hour
+  refreshTokenExp: 720 # hour
+  redisOptions:
+    addr: 207.148.105.249:6379
+    password: 123456
+    db: 1
+  clients:
+    -
+      id: "app"
+      secret: "aki"
+    -
+      id: "bbs"
+      secret: "aki"
+
+log:
+  filename: logtmp/oauth.log
+  maxSize: 500
+  maxBackups: 3
+  maxAge: 3
+  level: "debug"
+  stdout: false

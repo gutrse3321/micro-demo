@@ -33,6 +33,8 @@ func (i *IndexController) GetUserBaseInfo(ctx *gin.Context) {
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, err)
 	} else {
-		ctx.JSON(http.StatusOK, &userInfo)
+		ctx.JSON(http.StatusOK, &gin.H{
+			"data": &userInfo,
+		})
 	}
 }

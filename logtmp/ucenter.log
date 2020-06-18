@@ -65,3 +65,24 @@
 {"level":"info","ts":1591952806.7852864,"msg":"load application config success"}
 {"level":"info","ts":1591952806.7912831,"msg":"rpc server starting ...","type":"rpcx"}
 {"level":"info","ts":1591952807.0031548,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}
+{"level":"info","ts":1592192552.8674123,"msg":"load application config success"}
+{"level":"info","ts":1592192552.8734083,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1592192553.0922735,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}
+{"level":"info","ts":1592218986.8281379,"msg":"receive a signal","type":"Application","signal":"interrupt"}
+{"level":"info","ts":1592218986.829135,"msg":"rpc server stopping ... ","type":"rpcx"}
+{"level":"fatal","ts":1592218986.829135,"msg":"failed to serve rpc: %v","type":"rpcx","error":"http: Server closed"}
+{"level":"info","ts":1592272446.8331363,"msg":"load application config success"}
+{"level":"info","ts":1592272446.840132,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1592272447.046006,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}
+{"level":"info","ts":1592297404.277303,"msg":"receive a signal","type":"Application","signal":"interrupt"}
+{"level":"info","ts":1592297404.277303,"msg":"rpc server stopping ... ","type":"rpcx"}
+{"level":"fatal","ts":1592297404.277303,"msg":"failed to serve rpc: %v","type":"rpcx","error":"http: Server closed"}
+{"level":"info","ts":1592297421.526664,"msg":"load application config success"}
+{"level":"info","ts":1592297424.1289468,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1592297426.8871346,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000/rpcx"}
+{"level":"info","ts":1592299307.8644192,"msg":"load application config success"}
+{"level":"info","ts":1592299309.9125674,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1592299310.5192535,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}
+{"level":"info","ts":1592299673.5005567,"msg":"load application config success"}
+{"level":"info","ts":1592299673.5065525,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1592299673.7164237,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}

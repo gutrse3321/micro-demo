@@ -4,7 +4,6 @@ package main
 
 import (
 	"demo/oauth"
-	"demo/oauth/endpoints"
 	"github.com/google/wire"
 	remote "github.com/gutrse3321/aki-remote"
 	"github.com/gutrse3321/aki/pkg/app"
@@ -26,7 +25,6 @@ var wireSet = wire.NewSet(
 	http.WireSet,
 	remote.WireSet,
 	oauth.WireSet,
-	endpoints.WireSet,
 )
 
 func CreateApp(configPath string) (*app.Application, error) {
