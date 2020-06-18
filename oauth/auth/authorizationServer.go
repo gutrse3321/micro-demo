@@ -16,6 +16,8 @@ import (
  */
 
 func NewAuthorizationServer(manager *manage.Manager) *server.Server {
+	//利用server的SetAllowedGrantType方法来验证自定义的grantType
+	//再想如何实现处理自定义的grantType
 	srv := server.NewServer(server.NewConfig(), manager)
 	srv.SetAllowGetAccessRequest(false)
 	srv.SetClientInfoHandler(server.ClientFormHandler)
