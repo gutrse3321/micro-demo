@@ -11,7 +11,7 @@ require (
 	github.com/google/wire v0.4.0
 	github.com/gutrse3321/aki-remote v0.0.0-20200529091846-42e0904a886f
 	github.com/gutrse3321/aki/persit v0.0.0-20200529084448-2734c099fc91
-	github.com/gutrse3321/aki/pkg v0.0.0-20200616092458-a46bffbb2911
+	github.com/gutrse3321/aki/pkg v0.0.0-20200619033054-c20e563bfd91
 	github.com/pborman/uuid v1.2.0 // indirect
 	github.com/pkg/errors v0.9.1
 	github.com/smallnest/rpcx v0.0.0-20200522154920-57cd85a3467c

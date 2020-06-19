@@ -23,8 +23,8 @@ func NewIndexController(service service.IUserService) *IndexController {
 }
 
 func CreateInitControllersFn(index *IndexController) httpServer.InitControllers {
-	return func(r *gin.Engine) {
-		r.POST("/getUser", index.GetUserBaseInfo)
+	return func(g *gin.RouterGroup) {
+		g.POST("/getUser", index.GetUserBaseInfo)
 	}
 }
 

@@ -265,6 +265,8 @@ github.com/gutrse3321/aki/pkg v0.0.0-20200612090003-cf6d47d20c8b h1:che8BBpbLCiX
 github.com/gutrse3321/aki/pkg v0.0.0-20200612090003-cf6d47d20c8b/go.mod h1:7fkwlQDX5xX7gv+M9dUZ92A6nQM7yinLAZzcbn5ZNMA=
 github.com/gutrse3321/aki/pkg v0.0.0-20200616092458-a46bffbb2911 h1:JJW1+CGOhZDJtTWwLOEYZ/rtsXPLRScT7NyfOK7nCsg=
 github.com/gutrse3321/aki/pkg v0.0.0-20200616092458-a46bffbb2911/go.mod h1:7fkwlQDX5xX7gv+M9dUZ92A6nQM7yinLAZzcbn5ZNMA=
+github.com/gutrse3321/aki/pkg v0.0.0-20200619033054-c20e563bfd91 h1:mlc0YZZRtmxqazMfC7KHwIlxgFp3iY+EmxfQiKmo5F0=
+github.com/gutrse3321/aki/pkg v0.0.0-20200619033054-c20e563bfd91/go.mod h1:8lKqj7815vnJHUTCmJ9LDOGpih0p6bNUTKGimW61Vag=
 github.com/hashicorp/consul/api v1.1.0/go.mod h1:VmuI/Lkw1nC05EYQWNKwWGbkg+FbDBtguAZLlVdkD9Q=
 github.com/hashicorp/consul/api v1.4.0 h1:jfESivXnO5uLdH650JU/6AnjRoHrLhULq0FnC3Kp9EY=
 github.com/hashicorp/consul/api v1.4.0/go.mod h1:xc8u05kyMa3Wjr9eEAsIAo3dg8+LywT5E/Cl7cNS5nU=

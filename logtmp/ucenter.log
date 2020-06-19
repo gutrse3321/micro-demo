@@ -86,3 +86,12 @@
 {"level":"info","ts":1592299673.5005567,"msg":"load application config success"}
 {"level":"info","ts":1592299673.5065525,"msg":"rpc server starting ...","type":"rpcx"}
 {"level":"info","ts":1592299673.7164237,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}
+{"level":"info","ts":1592534641.4627907,"msg":"load application config success"}
+{"level":"info","ts":1592534641.4677875,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1592534641.6686652,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}
+{"level":"info","ts":1592534726.2662902,"msg":"receive a signal","type":"Application","signal":"interrupt"}
+{"level":"info","ts":1592534726.2662902,"msg":"rpc server stopping ... ","type":"rpcx"}
+{"level":"fatal","ts":1592534726.2662902,"msg":"failed to serve rpc: %v","type":"rpcx","error":"http: Server closed"}
+{"level":"info","ts":1592554022.0580635,"msg":"load application config success"}
+{"level":"info","ts":1592554022.0630603,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1592554022.2739286,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}

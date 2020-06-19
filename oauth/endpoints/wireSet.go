@@ -15,12 +15,12 @@ import (
  */
 
 func CreateInitControllersFn(login *LoginEndpoint, test *TestEndpoint) httpServer.InitControllers {
-	return func(r *gin.Engine) {
+	return func(g *gin.RouterGroup) {
 		//LoginEndpoint
-		r.POST("/oauth/login", login.Login)
+		g.POST("/oauth/login", login.Login)
 
 		//TestEndpoint
-		r.POST("/oauth/test", test.Test)
+		g.POST("/oauth/test", test.Test)
 	}
 }
 
