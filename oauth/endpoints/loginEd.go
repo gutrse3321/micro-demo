@@ -24,7 +24,7 @@ func NewLoginEndpoint(oauthServer *server.Server) *LoginEndpoint {
 
 func (e *LoginEndpoint) Login(ctx *gin.Context) {
 	err := e.oauthServer.HandleTokenRequest(ctx.Writer, ctx.Request)
-	e.oauthServer.SetAllowedGrantType()
+	//e.oauthServer.SetAllowedGrantType()
 	if err != nil {
 		http.Error(ctx.Writer, err.Error(), http.StatusInternalServerError)
 	}

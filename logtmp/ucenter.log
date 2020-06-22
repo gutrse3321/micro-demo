@@ -95,3 +95,11 @@
 {"level":"info","ts":1592554022.0580635,"msg":"load application config success"}
 {"level":"info","ts":1592554022.0630603,"msg":"rpc server starting ...","type":"rpcx"}
 {"level":"info","ts":1592554022.2739286,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}
+{"level":"info","ts":1592564477.4026213,"msg":"receive a signal","type":"Application","signal":"interrupt"}
+{"level":"info","ts":1592564477.4026213,"msg":"rpc server stopping ... ","type":"rpcx"}
+{"level":"info","ts":1592793747.5180013,"msg":"load application config success"}
+{"level":"info","ts":1592793747.523998,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1592793748.3117065,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}
+{"level":"info","ts":1592797079.227482,"msg":"load application config success"}
+{"level":"info","ts":1592797079.233479,"msg":"rpc server starting ...","type":"rpcx"}
+{"level":"info","ts":1592797079.555747,"msg":"register rpc service success","type":"rpcx","id":"tcp@127.0.0.1:3000"}

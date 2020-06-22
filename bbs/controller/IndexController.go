@@ -30,11 +30,15 @@ func CreateInitControllersFn(index *IndexController) httpServer.InitControllers 
 
 func (i *IndexController) GetUserBaseInfo(ctx *gin.Context) {
 	userInfo, err := i.userService.GetUserInfo()
+	isMe := ctx.PostForm("isMe")
+	form, err := ctx.MultipartForm()
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, err)
 	} else {
 		ctx.JSON(http.StatusOK, &gin.H{
 			"data": &userInfo,
+			"isMe": isMe,
+			"form": form,
 		})
 	}
 }
